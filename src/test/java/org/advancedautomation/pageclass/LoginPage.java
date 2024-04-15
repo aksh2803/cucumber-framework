@@ -42,7 +42,8 @@ public class LoginPage extends DriverClass {
 			Report.testStep("pass", "Logged In Successfully");
 		} else {
 			Report.testStep("fail", "Login failed");
-			Report.stopReport();
+
 		}
+		Report.stopReport();
 	}
 }

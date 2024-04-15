@@ -15,9 +15,8 @@ public class LoginStep extends BrowserClass {
 
 	@Given("User should navigate to the salesforce web application")
 	public void user_should_navigate_to_the_salesforce_web_application() throws Exception {
-		System.out.println("1111");
 		String Title = driver.getTitle();
-		System.out.println("=========== "+Title);
+		System.out.println("The title is: "+Title);
 	}
 
 	@When("User should enter the username as {string} and password as {string}")

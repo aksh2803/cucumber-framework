@@ -7,10 +7,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/Features/leadconversion.feature"
+@CucumberOptions(features = { "src/test/resources/Features/login.feature"
 		//, "src/test/resources/Features/home.feature"
 							  //"src/test/resources/Features/leadcreation.feature" 
-		}, glue = "stepDefinitions", monochrome = true, 
+		}, glue = "stepDefinitions", monochrome = true,
 				plugin = {
 				"pretty", "html:target/HTMLReports/report.html", "json:target/JSONReports/report.json",
 				"junit:target/JunitReports/report.xml" }, tags = "@smoketest")

@@ -4,10 +4,8 @@ import java.time.Duration;
 
 import org.advancedautomation.browserclass.BrowserClass;
 import org.advancedautomation.pageclass.LeadConversionPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.And;
@@ -28,10 +26,7 @@ public class LeadConversionStep extends BrowserClass {
 
 	@And("User should click the convert lead button")
 	public void user_should_click_the_convert_lead_button(WebElement element) {
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-//	    wait.until(d -> revealed.isDisplayed());
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		leadconversionpage.clickConvertLead();
 	}

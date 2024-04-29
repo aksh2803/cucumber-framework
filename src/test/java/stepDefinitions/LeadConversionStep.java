@@ -9,9 +9,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.And;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
+
 
 public class LeadConversionStep extends BrowserClass {
 	LeadConversionPage leadconversionpage;
+	
+	@Description("Verify the lead is converted successfully")
+	@Epic("EP003")
+	@Feature("Feature1: lead conversion")
+	@Story("Story: Verify the lead conversion")
+	@Step("Verify lead conversion is success")
+	@Severity(SeverityLevel.MINOR)
 
 	@And("User should click the dropdown")
 	public void user_should_click_the_dropdown() {

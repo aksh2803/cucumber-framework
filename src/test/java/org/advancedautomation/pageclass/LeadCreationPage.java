@@ -1,6 +1,7 @@
 package org.advancedautomation.pageclass;
 
 import org.advancedautomation.abstractclass.DriverClass;
+import org.advancedautomation.reportgeneration.Report;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,44 +34,52 @@ public class LeadCreationPage extends DriverClass {
 //	private WebElement downArrow;
 
 	public void clickNewButton() {
+		Report.createTestCase("TC003 - Lead Creation Page", "Akshaya", "Sanity");
 		newButton.click();
+		Report.testStep("pass", "Clicked the new button.");
 	}
 
 	public void enterFirstName(String fname) {
 		firstName.sendKeys(fname);
+		Report.testStep("pass", "Entered the first name");
 	}
 
 	public void enterLastName(String lname) {
 		lastName.sendKeys(lname);
+		Report.testStep("pass", "Entered the last name");
 	}
 
 	public void enterCompany(String Comp) {
-		company.sendKeys(Comp);
+		if (Comp == null) {
+			Report.testStep("fail", "Company is missing");
+			Report.stopReport();
+		} else {
+			company.sendKeys(Comp);
+			Report.testStep("pass", "Entered the company name");
+		}
 	}
 
 	public void enterTitle(String titleLead) {
 		title.sendKeys(titleLead);
+		Report.testStep("pass", "Entered the title");
 	}
 
 	public void clickSaveBtn() {
 		saveBtn.click();
 	}
-
-	// Method for lead creation page
-	/*
-	 * public String leadCreationMethod() throws Exception {
-	 * 
-	 * clickButton(newButton);
-	 * 
-	 * waitImplicitClick(); clickButton(leadSource); clickButton(optionWeb);
-	 * clickButton(industry); clickButton(optionIndustry);
-	 * 
-	 * clickButton(region); clickButton(optionRegion);
-	 * 
-	 * clickButton(rating); clickButton(optionRating);
-	 * 
-	 * clickButton(saveBtn); waitExplicitClick(downArrow);
-	 * 
-	 * }
-	 */
 }
+//		String title = driver.getTitle();
+//		String checkTitle = fname + " " + lname + " | Lead | Salesforce";
+//		System.out.println("Lead creation page title--- " + title);
+//		System.out.println("Name --- " + lname);
+//		System.out.println("CheckTitle --- " + checkTitle);
+//
+//		if (title.equalsIgnoreCase(checkTitle))
+//			Report.testStep("pass", "Clicked the Save button");
+//		else {
+//			Report.testStep("fail", "Record creation failure");
+//			Report.stopReport();
+//		}
+//		return fname + " " + lname;
+//	}
+//}

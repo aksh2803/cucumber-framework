@@ -3,7 +3,7 @@ Feature: To validate the mandatory fields
  @smoketest
   Scenario: Validate the login is successful with valid credentials
     Given User should navigate to the salesforce web application
-    When User should enter the username as "akshayab1328@gmail.com" and password as "Akshayamnji1998"
+    When User should enter the username and password
     Then User should click the login button
     #Scenario: User should navigate to the lead creation page
     #Given User is on the salesforce home page

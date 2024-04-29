@@ -1,5 +1,7 @@
 package org.advancedautomation.reportgeneration;
 
+import org.advancedautomation.constantclass.Constant;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -10,13 +12,9 @@ public class Report {
 
 	// Method for start report
 	public static void startReport() {
-		System.out.println("111");
-		ExtentSparkReporter extentsparkreporter = new ExtentSparkReporter("C:\\Users\\Akshaya.b\\git\\cucumber-framework\\src\\test\\resources\\ReportGeneration\\TestResults.html");
-		System.out.println("222");
+		ExtentSparkReporter extentsparkreporter = new ExtentSparkReporter(Constant.ReportGeneration);
 		extent = new ExtentReports();
-		System.out.println("333");
 		extent.attachReporter(extentsparkreporter);
-		System.out.println("444");
 	}
 
 	// Method for close report

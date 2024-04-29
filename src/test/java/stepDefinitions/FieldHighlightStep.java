@@ -19,8 +19,4 @@ public class FieldHighlightStep extends BrowserClass {
 		
 		fieldhighlightpage.highlightElement();
 	}
-
-
-
-
 }

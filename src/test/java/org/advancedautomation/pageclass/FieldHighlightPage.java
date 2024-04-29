@@ -27,7 +27,5 @@ public class FieldHighlightPage extends DriverClass {
 		String script = "arguments[0].style.backgroundColor = 'green'; "
 				+ "arguments[0].style.border = '2px solid red';";
 		((JavascriptExecutor) driver).executeScript(script, leadOwner);
-//		js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].setAttribute('style', 'border: 5px solid green;');", leadOwner);
 	}
 }

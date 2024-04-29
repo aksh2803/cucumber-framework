@@ -7,13 +7,12 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/Features/login.feature"
+@CucumberOptions(features = { "src/test/resources/Features/leadcreation.feature"
 		//, "src/test/resources/Features/home.feature"
 							  //"src/test/resources/Features/leadcreation.feature" 
 		}, glue = "stepDefinitions", monochrome = true,
 				plugin = {
-				"pretty", "html:target/HTMLReports/report.html", "json:target/JSONReports/report.json",
-				"junit:target/JunitReports/report.xml" }, tags = "@smoketest")
+				"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}, tags = "@smoketest")
 public class TestRunner extends AbstractTestNGCucumberTests	{
 
 }

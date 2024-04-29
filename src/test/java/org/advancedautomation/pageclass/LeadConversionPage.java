@@ -1,7 +1,7 @@
 package org.advancedautomation.pageclass;
 
 import org.advancedautomation.abstractclass.DriverClass;
-import org.junit.Assert;
+import org.advancedautomation.reportgeneration.Report;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,20 +25,23 @@ public class LeadConversionPage extends DriverClass {
 	private WebElement verifyTitle;
 
 	public void clickDownArrow() {
+		Report.createTestCase("TC004 - Lead Conversion Page", "Akshaya", "Sanity");
 		downArrow.click();
+		Report.testStep("pass", "Clicked the Dropdown button");
 	}
 
 	public void clickConvertClick() {
 		convertClick.click();
+		Report.testStep("pass", "Clicked the Convert button from the dropdown");
 	}
 
 	public void clickConvertLead() {
 		convertLead.click();
 	}
 
-	public String convertVerifyTitle() {
-		return verifyTitle.getText();
-	}
+//	public String convertVerifyTitle() {
+//		return verifyTitle.getText();
+//	}
 
 	// Method for lead conversion page
 	public void leadConversionMethod(String name) throws InterruptedException {

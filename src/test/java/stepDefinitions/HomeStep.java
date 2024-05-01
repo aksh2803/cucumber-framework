@@ -1,7 +1,6 @@
 package stepDefinitions;
 
-import java.time.Duration;
-
+import org.advancedautomation.baseclass.BaseClass;
 import org.advancedautomation.browserclass.BrowserClass;
 import org.advancedautomation.pageclass.HomePage;
 
@@ -29,14 +28,11 @@ public class HomeStep extends BrowserClass {
 
 	@Given("User is on the salesforce home page")
 	public void user_is_on_the_salesforce_home_page() {
-		String title = driver.getTitle();
-		System.out.println(title);
+		homepage = new HomePage(BaseClass.getDriver());
 	}
 
 	@Then("User should click the app launcher")
 	public void user_should_click_the_app_launcher() {
-		homepage = new HomePage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		homepage.clickAppLauncher();
 
 	}
@@ -47,9 +43,8 @@ public class HomeStep extends BrowserClass {
 	}
 
 	@Then("User should click the leads")
-	public void user_should_click_the_leads() {
+	public void user_should_click_the_leads() throws InterruptedException {
 		homepage.clickLeadObj();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
 }

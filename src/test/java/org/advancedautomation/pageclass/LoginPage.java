@@ -1,6 +1,7 @@
 package org.advancedautomation.pageclass;
 
 import org.advancedautomation.abstractclass.DriverClass;
+import org.advancedautomation.baseclass.BaseClass;
 import org.advancedautomation.reportgeneration.Report;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +37,7 @@ public class LoginPage extends DriverClass {
 
 	public void clickLogin() throws Throwable {
 		loginBtn.click();
+		//BaseClass.waitExplicitClick(loginBtn);
 		String currUrl = driver.getCurrentUrl();
 		System.out.println("Login Page Current URL - " + currUrl);
 		if (currUrl.equals("https://bhc5-dev-ed.lightning.force.com/lightning/setup/SetupOneHome/home")) {

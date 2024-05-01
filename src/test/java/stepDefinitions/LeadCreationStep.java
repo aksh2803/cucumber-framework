@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import org.advancedautomation.baseclass.BaseClass;
 import org.advancedautomation.browserclass.BrowserClass;
 import org.advancedautomation.constantclass.Constant;
 import org.advancedautomation.db.Database;
@@ -13,6 +14,7 @@ import org.advancedautomation.utils.DataUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -36,11 +38,10 @@ public class LeadCreationStep extends BrowserClass {
 	@Step("Verify lead creation is success")
 	@Severity(SeverityLevel.MINOR)
 
-//@Given("User is on the Lead page")
-//public void user_is_on_the_lead_page() {
-//    // Write code here that turns the phrase above into concrete actions
-//    throw new io.cucumber.java.PendingException();
-//}
+	@Given("User is on the Lead page")
+	public void user_is_on_the_lead_page() {
+		leadcreationpage = new LeadCreationPage(BaseClass.getDriver());
+	}
 //	@ParameterType(".*")
 //	public String lead(String value) {
 //		return new String(value);
@@ -48,7 +49,7 @@ public class LeadCreationStep extends BrowserClass {
 
 	@And("User should click the new button")
 	public void user_should_click_the_new_button() {
-		leadcreationpage = new LeadCreationPage(driver);
+
 		leadcreationpage.clickNewButton();
 	}
 
@@ -80,5 +81,6 @@ public class LeadCreationStep extends BrowserClass {
 	@And("User successfully created the lead record")
 	public void user_successfully_created_the_lead_record() {
 		leadcreationpage.clickSaveBtn();
+		leadcreationpage.leadReport();
 	}
 }

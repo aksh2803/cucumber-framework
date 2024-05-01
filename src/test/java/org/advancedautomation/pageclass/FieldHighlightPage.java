@@ -1,6 +1,7 @@
 package org.advancedautomation.pageclass;
 
 import org.advancedautomation.abstractclass.DriverClass;
+import org.advancedautomation.baseclass.BaseClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,10 +21,12 @@ public class FieldHighlightPage extends DriverClass {
 	private WebElement leadOwner;
 
 	public void clickDetailTab() {
+		BaseClass.waitExplicitClick(detailTab);
 		detailTab.click();
 	}
 
 	public void highlightElement() {
+		BaseClass.waitExplicitClick(leadOwner);
 		String script = "arguments[0].style.backgroundColor = 'green'; "
 				+ "arguments[0].style.border = '2px solid red';";
 		((JavascriptExecutor) driver).executeScript(script, leadOwner);

@@ -3,10 +3,12 @@ package org.advancedautomation.pageclass;
 import java.util.List;
 
 import org.advancedautomation.abstractclass.DriverClass;
+import org.advancedautomation.baseclass.BaseClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class ValidatingMandatoryFieldPage extends DriverClass {
 	JavascriptExecutor js;
@@ -41,9 +43,14 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 
 	public void nButton() {
 		newButton.click();
+		BaseClass.waitImplicitClick();
+//		String currUrl = driver.getCurrentUrl();
+//		Assert.assertEquals(currUrl, "https://login.salesforce.com/?locale=in");
 	}
 
 	public void sButton() {
+		BaseClass.waitImplicitClick();
 		saveBtn.click();
 	}
+
 }

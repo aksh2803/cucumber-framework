@@ -49,7 +49,7 @@ public class BaseClass {
 
 	// Method for implicit wait
 	public static void waitImplicitClick() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
 	// Method for explicit wait
@@ -65,12 +65,13 @@ public class BaseClass {
 
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-//	public static void tearDown() {
-//        if(driver!=null) {
-//            driver.close();
-//            driver.quit();
-//        }
-//        BaseClass = null;
-//    }
+
+	public static void tearDown() {
+		if (driver != null) {
+			driver.close();
+			driver.quit();
+		}
+		baseClass = null;
+	}
 
 }

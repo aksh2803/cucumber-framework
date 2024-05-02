@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import org.advancedautomation.baseclass.BaseClass;
 import org.advancedautomation.browserclass.BrowserClass;
 import org.advancedautomation.pageclass.ValidatingMandatoryFieldPage;
 
@@ -10,7 +11,7 @@ public class ValidatingMandatoryFieldsStep extends BrowserClass {
 
 	@And("User clicks the new button")
 	public void user_clicks_the_new_button() {
-		validatingmandatoryfieldpage = new ValidatingMandatoryFieldPage(driver);
+		validatingmandatoryfieldpage = new ValidatingMandatoryFieldPage(BaseClass.getDriver());
 		validatingmandatoryfieldpage.nButton();
 	}
 
@@ -22,5 +23,6 @@ public class ValidatingMandatoryFieldsStep extends BrowserClass {
 	@And("Highlight the last name")
 	public void highlight_the_last_name_() {
 		validatingmandatoryfieldpage.printLabel();
+		//validatingmandatoryfieldpage.mandatoryFieldReport();
 	}
 }

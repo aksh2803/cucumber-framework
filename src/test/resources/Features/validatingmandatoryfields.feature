@@ -1,6 +1,5 @@
 #Feature: To validate the mandatory fields
 #
- #@smoketest
   #Scenario: Validate the login is successful with valid credentials
     #Given User should navigate to the salesforce web application
     #When User should enter the username and password

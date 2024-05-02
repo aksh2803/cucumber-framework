@@ -89,23 +89,8 @@ public class LeadCreationPage extends DriverClass {
 		}
 		Report.stopReport();
 	}
-	
+
 	public String getLeadTitle() {
 		return leadName.getText().concat(" | Lead | Salesforce");
 	}
 }
-//		String title = driver.getTitle();
-//		String checkTitle = fname + " " + lname + " | Lead | Salesforce";
-//		System.out.println("Lead creation page title--- " + title);
-//		System.out.println("Name --- " + lname);
-//		System.out.println("CheckTitle --- " + checkTitle);
-//
-//		if (title.equalsIgnoreCase(checkTitle))
-//			Report.testStep("pass", "Clicked the Save button");
-//		else {
-//			Report.testStep("fail", "Record creation failure");
-//			Report.stopReport();
-//		}
-//		return fname + " " + lname;
-//	}
-//}

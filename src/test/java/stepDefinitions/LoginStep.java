@@ -35,13 +35,11 @@ public class LoginStep extends BrowserClass {
 	public void user_should_navigate_to_the_salesforce_web_application() throws Exception {
 		loginpage = new LoginPage(BaseClass.getDriver());
 		BaseClass.openUrl();
-//		String Title = driver.getTitle();
-//		System.out.println("The title is: " + Title);
 	}
 
 	@When("User should enter the username and password")
 	public void user_should_enter_the_username_and_password() throws SQLException {
-		
+
 		ResultSet resultSet = Database.getLoginCredentials();
 		if (resultSet.next()) {
 			String dbUsername = resultSet.getString("username");
@@ -52,8 +50,6 @@ public class LoginStep extends BrowserClass {
 			loginpage.getPassword(dbPassword);
 		}
 	}
-//		loginpage.getUserName(username);
-//		 loginpage.getPassword(password);
 
 	@Then("User should click the login button")
 	public void user_should_click_the_login_button() throws Throwable {

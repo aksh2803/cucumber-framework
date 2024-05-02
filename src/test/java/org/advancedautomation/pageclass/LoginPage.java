@@ -6,6 +6,7 @@ import org.advancedautomation.reportgeneration.Report;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class LoginPage extends DriverClass {
 	// constructor to initialize web elements
@@ -39,6 +40,7 @@ public class LoginPage extends DriverClass {
 		loginBtn.click();
 		//BaseClass.waitExplicitClick(loginBtn);
 		String currUrl = driver.getCurrentUrl();
+		//Assert.assertEquals(currUrl, "https://bhc5-dev-ed.lightning.force.com/lightning/setup/SetupOneHome/home");
 		System.out.println("Login Page Current URL - " + currUrl);
 		if (currUrl.equals("https://bhc5-dev-ed.lightning.force.com/lightning/setup/SetupOneHome/home")) {
 			Report.testStep("pass", "Logged In Successfully");

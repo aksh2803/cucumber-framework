@@ -7,7 +7,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Features/validatingmandatoryfields.feature", glue = "stepDefinitions", monochrome = true, plugin = {
+@CucumberOptions(features = "src/test/resources/Features", glue = "stepDefinitions", monochrome = true, plugin = {
 		"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" })
 public class TestRunner extends AbstractTestNGCucumberTests {
 

@@ -8,7 +8,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class ValidatingMandatoryFieldPage extends DriverClass {
 	JavascriptExecutor js;
@@ -16,6 +15,9 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 	public ValidatingMandatoryFieldPage(WebDriver driver) {
 		super(driver);
 	}
+
+	@FindBy(xpath = "//button[contains(text(),'Go to Leads')]")
+	private WebElement goToLeads;
 
 	@FindBy(xpath = "//div[contains(text(),'New')]")
 	private WebElement newButton;
@@ -25,6 +27,27 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 
 	@FindBy(xpath = "//abbr[@title='required']//parent::label")
 	private List<WebElement> label1;
+
+	public void toLeads() throws InterruptedException {
+		goToLeads.click();
+		Thread.sleep(5000);
+		// BaseClass.waitImplicitClick();
+	}
+
+	public void nButton() throws InterruptedException {
+		newButton.click();
+		Thread.sleep(5000);
+		// BaseClass.waitImplicitClick();
+//		String currUrl = driver.getCurrentUrl();
+//		Assert.assertEquals(currUrl, "https://login.salesforce.com/?locale=in");
+	}
+
+	public void sButton() throws InterruptedException {
+		Thread.sleep(5000);
+		// BaseClass.waitImplicitClick();
+		saveBtn.click();
+		Thread.sleep(5000);
+	}
 
 	public void printLabel() {
 		for (WebElement label : label1) {
@@ -39,18 +62,6 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 		String script = "arguments[0].style.backgroundColor = 'yellow'; "
 				+ "arguments[0].style.border = '2px solid red';";
 		((JavascriptExecutor) driver).executeScript(script, label);
-	}
-
-	public void nButton() {
-		newButton.click();
-		BaseClass.waitImplicitClick();
-//		String currUrl = driver.getCurrentUrl();
-//		Assert.assertEquals(currUrl, "https://login.salesforce.com/?locale=in");
-	}
-
-	public void sButton() {
-		BaseClass.waitImplicitClick();
-		saveBtn.click();
 	}
 
 }

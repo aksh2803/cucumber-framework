@@ -5,3 +5,4 @@ Feature: To validate the mandatory fields
     And User clicks the new button
     And User should click the save button
     And Highlight the last name 
+    And Click the close button

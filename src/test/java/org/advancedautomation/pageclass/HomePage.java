@@ -25,9 +25,9 @@ public class HomePage extends DriverClass {
 	@FindBy(xpath = "//div[@class='al-menu-dropdown-list' and @aria-label='Items']")
 	private WebElement clickLead;
 
-	public void clickAppLauncher() {
+	public void clickAppLauncher() throws InterruptedException {
 		Report.createTestCase("TC002 - Home Page", "Akshaya", "Sanity");
-		BaseClass.waitExplicitClick(appLauncher);
+		//BaseClass.waitExplicitClick(appLauncher);
 		appLauncher.click();
 		Report.testStep("pass", "AppLauncher clicked");
 	}

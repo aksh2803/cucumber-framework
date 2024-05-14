@@ -32,7 +32,8 @@ public class HomeStep extends BrowserClass {
 	}
 
 	@Then("User should click the app launcher")
-	public void user_should_click_the_app_launcher() {
+	public void user_should_click_the_app_launcher() throws InterruptedException {
+		Thread.sleep(20000);
 		homepage.clickAppLauncher();
 
 	}

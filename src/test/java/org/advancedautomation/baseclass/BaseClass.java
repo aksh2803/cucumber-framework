@@ -26,7 +26,8 @@ public class BaseClass {
 	protected LeadConversionPage leadconversionpage;
 
 	public BaseClass() {
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Akshaya.b\\git\\cucumber-framework\\myDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}

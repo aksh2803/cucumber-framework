@@ -30,4 +30,9 @@ public class ValidatingMandatoryFieldsStep extends BrowserClass {
 	public void highlight_the_last_name_() {
 		validatingmandatoryfieldpage.printLabel();
 	}
+	
+	@And("Click the close button")
+	public void click_the_close_button() throws InterruptedException {
+		validatingmandatoryfieldpage.closeBtn();
+	}
 }

@@ -28,6 +28,9 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 	@FindBy(xpath = "//abbr[@title='required']//parent::label")
 	private List<WebElement> label1;
 
+	@FindBy(xpath = "//button[@type='button']//lightning-primitive-icon//*[local-name()='svg' and @data-key='close']")
+	private WebElement close;
+
 	public void toLeads() throws InterruptedException {
 		goToLeads.click();
 		Thread.sleep(5000);
@@ -46,6 +49,11 @@ public class ValidatingMandatoryFieldPage extends DriverClass {
 		Thread.sleep(5000);
 		// BaseClass.waitImplicitClick();
 		saveBtn.click();
+		Thread.sleep(5000);
+	}
+
+	public void closeBtn() throws InterruptedException {
+		close.click();
 		Thread.sleep(5000);
 	}
 

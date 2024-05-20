@@ -6,6 +6,7 @@ import org.advancedautomation.pageclass.HomePage;
 import org.advancedautomation.pageclass.LeadConversionPage;
 import org.advancedautomation.pageclass.LeadCreationPage;
 import org.advancedautomation.pageclass.LoginPage;
+//import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +28,7 @@ public class BaseClass {
 
 	public BaseClass() {
 		//WebDriverManager.chromedriver().setup();
+		//PropertyConfigurator.configure("C:\\Users\\Akshaya.b\\git\\cucumber-framework\\src\\main\\resources\\log4j.properties");
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Akshaya.b\\git\\cucumber-framework\\myDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -47,7 +49,6 @@ public class BaseClass {
 			baseClass = new BaseClass();
 		}
 	}
-
 	// Method for implicit wait
 	public static void waitImplicitClick() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));

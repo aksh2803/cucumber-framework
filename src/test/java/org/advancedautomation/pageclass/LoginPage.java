@@ -1,15 +1,15 @@
 package org.advancedautomation.pageclass;
 
 import org.advancedautomation.abstractclass.DriverClass;
-import org.advancedautomation.baseclass.BaseClass;
 import org.advancedautomation.reportgeneration.Report;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+import org.apache.log4j.Logger;
 
 public class LoginPage extends DriverClass {
 	// constructor to initialize web elements
+	Logger log = Logger.getLogger(LoginPage.class);
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -25,6 +25,13 @@ public class LoginPage extends DriverClass {
 	private WebElement loginBtn;
 
 	public void getUserName(String username) {
+		
+		log.debug("debug");
+		log.info("info");
+		log.warn("warn");
+		log.fatal("fatal");
+		
+		log.info("UserName: "+username);
 		Report.startReport();
 		Report.createTestCase("TC001 - Login Page", "Akshaya", "Sanity");
 		userName.sendKeys(username);
@@ -41,7 +48,7 @@ public class LoginPage extends DriverClass {
 		//BaseClass.waitExplicitClick(loginBtn);
 		String currUrl = driver.getCurrentUrl();
 		//Assert.assertEquals(currUrl, "https://bhc5-dev-ed.lightning.force.com/lightning/setup/SetupOneHome/home");
-		System.out.println("Login Page Current URL - " + currUrl);
+		log.info("Login Page Current URL - " + currUrl);
 		if (currUrl.equals("https://bhc5-dev-ed.lightning.force.com/lightning/setup/SetupOneHome/home")) {
 			Report.testStep("pass", "Logged In Successfully");
 		} else {

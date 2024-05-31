@@ -21,8 +21,10 @@ public class FieldHighlightPage extends DriverClass {
 	private WebElement leadOwner;
 
 	public void clickDetailTab() {
+		System.out.println("222");
 		BaseClass.waitExplicitClick(detailTab);
 		detailTab.click();
+		System.out.println("222");
 	}
 
 	public void highlightElement() {
